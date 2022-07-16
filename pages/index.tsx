@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import NextNode from "../components/NextNode";
 import styles from "../styles/Home.module.css";
 
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -43,12 +42,6 @@ const Home: NextPage = () => {
             link={"https://mui.com/material-ui/react-card/#main-content"}
           ></NextNode>
         </div>
-        <NewsCard
-          title={"News"}
-          description={"Nueva noticia sobre Bitcoin"}
-          imageurl={"vespa.jpg"}
-        ></NewsCard>
-        <ButtonLink url="landingpage" text="Landing page"></ButtonLink>
       </main>
       <Footer></Footer>
     </div>
