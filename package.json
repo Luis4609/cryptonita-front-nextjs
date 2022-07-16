@@ -13,6 +13,7 @@
     "@ant-design/plots": "^1.1.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
     "chart.js": "^3.8.0",
     "echarts": "^5.3.3",
