@@ -1,9 +1,9 @@
 export type Coin = {
-  data: Data;
+  data: CoinData;
   timestamp: number;
 };
 
-export type Data = {
+export type CoinData = {
   id: string;
   rank: number;
   symbol: string;

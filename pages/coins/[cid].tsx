@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
 import { useState } from "react";
-import { Coin, Data } from "../../types/coin";
+import { useRouter } from "next/router";
 import { InferGetStaticPropsType } from "next/types";
+import { Coin } from "../../types/coin";
+import { Typography } from "@mui/material";
 import styles from "../../styles/Home.module.css";
-import { Grid, Card, Typography, CardContent } from "@mui/material";
 
 const API_URL: string = "https://api.coincap.io/v2/assets/";
 

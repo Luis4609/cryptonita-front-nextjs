@@ -128,8 +128,7 @@ export default function PersistentDrawerLeft() {
           {[
             "Crypto Information",
             "Historic Data",
-            "News Session",
-            "Drafts",
+            "News"
           ].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -157,7 +156,7 @@ export default function PersistentDrawerLeft() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>Gráficas</Typography>
+        <Typography paragraph>Descripción... sobre CryptoNita</Typography>
       </Main>
     </Box>
   );
