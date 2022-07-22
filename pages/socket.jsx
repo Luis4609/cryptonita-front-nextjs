@@ -15,6 +15,7 @@ const WebSocketDemo = () => {
   useEffect(() => {
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
+      // console.log(messageHistory)
     }
   }, [lastMessage, setMessageHistory]);
 
@@ -33,41 +34,45 @@ const WebSocketDemo = () => {
     [ReadyState.UNINSTANTIATED]: "Uninstantiated",
   }[readyState];
 
-  function isCoinEqual(object1, object2) {
-    console.log(`%cCheck mayor que: ${object1 >= object2}`, "color: red ;");
-    console.log(`%cCheck valor que: ${object1}`, "color: green ;");
+  function isCoinGoingUp(object1, object2) {
+    // console.log(`%cCheck mayor que: ${object1 >= object2}`, "color: red ;");
+    // console.log(`%cCheck valor que: ${object1}`, "color: green ;");
 
     return object1 >= object2;
   }
 
+  // console.log(`Last message: ${messageHistory.at(-1).data}`);
+
   return (
     <div>
-      {/* <button onClick={handleClickChangeSocketUrl}>
-        Click Me to change Socket Url
-      </button>
-      <button
-        onClick={handleClickSendMessage}
-        disabled={readyState !== ReadyState.OPEN}
-      >
-        Click Me to send 'Hello'
-      </button> */}
       <span>The WebSocket is currently {connectionStatus}</span>
-      {lastMessage ? <span>Last message: {lastMessage.data}</span> : null}
-      <ul>
+      {/* {lastMessage ? <span> Last message: {lastMessage.data}</span> : null} */}
+      {lastMessage ? (
+        <span
+          className={
+            isCoinGoingUp(messageHistory.at(-1)?.data, messageHistory.at(-2)?.data)
+              ? styles.verde
+              : styles.rojo
+          }
+        >
+          {" "}
+          Bitcoin {messageHistory.at(-1)?.data.slice(12, -2)}
+        </span>
+      ) : null}
+      {/* <ul>
         {messageHistory.map((message, idx, subida) => (
           <span
             key={idx}
             className={
-              isCoinEqual(subida[idx].data, subida[idx - 1]?.data)
+              isCoinGoingUp(subida[idx].data, subida[idx - 1]?.data)
                 ? styles.verde
                 : styles.rojo
             }
           >
             {message ? message.data : null}
-            {/* {console.log(subida[idx].data)} */}
           </span>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
