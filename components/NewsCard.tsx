@@ -2,10 +2,12 @@ import * as React from "react";
 import {
   Button,
   Card,
+  CardHeader,
   CardActions,
   CardContent,
   Typography,
   Box,
+  Avatar,
 } from "@mui/material";
 import { NewsType } from "../types/news";
 
@@ -13,17 +15,18 @@ function NewsCard(props: NewsType) {
   return (
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">
+        <CardHeader
+          avatar={<Avatar aria-label="recipe">{props.icon}</Avatar>}
+          title={props.title}
+          subheader={props.feedDate}
+        />
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             ID: {props.id}
           </Typography>
-          <Typography variant="h5" component="div">
-            Date: {props.feedDate}
-          </Typography>
           <Typography variant="h6">{props.source}</Typography>
           <Typography variant="h4">{props.title}</Typography>
-          <Typography>Icon: {props.icon}</Typography>
-          <Typography>Max supply: {props.imgUrl}</Typography>
+          <img src={props.imgUrl} alt="Image or this news" />
           <Typography>Market Cap: {props.description}</Typography>
           {props.coins.map((coin) => (
             <>
