@@ -2,7 +2,6 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import CoinCard from "../../components/CoinCard";
 import { Coin, CoinData } from "../../types/coin";
 
@@ -24,16 +23,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const CoinsPage: NextPage = ({ coinsinfo }) => {
-  // const [coins, setCoins] = useState<CoinData[]>([]);
-
-  // useEffect(() => {
-  //   fetch("https://api.coincap.io/v2/assets/")
-  //     .then((res) => res.json())
-  //     .then((data) => setCoins(data.data));
-  // }, []);
-
-  console.log(`Coins ${coinsinfo.length}`);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Typography variant="h3">Lista de monedas</Typography>

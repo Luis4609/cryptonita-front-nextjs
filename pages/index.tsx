@@ -35,6 +35,11 @@ const Home: NextPage = () => {
             link={"Update news page"}
           ></NextNode>
           <NextNode
+            title={"Posts Page"}
+            text={"See the posts list, retrieve from Json Placeholder"}
+            link={"posts"}
+          ></NextNode>
+          <NextNode
             title={"Coins Page"}
             text={"Documentation for the Card component from MUI."}
             link={"coins"}
