@@ -1,6 +1,7 @@
 import { style } from "@mui/system";
 import React, { useState, useCallback, useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
+import RealTimeCard from "../components/RealTimeCoinCard";
 import styles from "../styles/Home.module.css";
 
 const WebSocketDemo = () => {
@@ -50,7 +51,10 @@ const WebSocketDemo = () => {
       {lastMessage ? (
         <span
           className={
-            isCoinGoingUp(messageHistory.at(-1)?.data, messageHistory.at(-2)?.data)
+            isCoinGoingUp(
+              messageHistory.at(-1)?.data,
+              messageHistory.at(-2)?.data
+            )
               ? styles.verde
               : styles.rojo
           }
@@ -59,6 +63,23 @@ const WebSocketDemo = () => {
           Bitcoin {messageHistory.at(-1)?.data.slice(12, -2)}
         </span>
       ) : null}
+      <RealTimeCard
+        name="Bitcoin"
+        price={messageHistory.at(-1)?.data.slice(12, -2)}
+        diffPercent={
+          parseFloat(messageHistory.at(-1)?.data.slice(12, -2)) -
+          parseFloat(messageHistory.at(-2)?.data.slice(12, -2))
+        }
+        actualStyle={
+          isCoinGoingUp(
+            messageHistory.at(-1)?.data,
+            messageHistory.at(-2)?.data
+          )
+            ? "goingUp.primary"
+            : "goingUp.secondary"
+        }
+      ></RealTimeCard>
+
       {/* <ul>
         {messageHistory.map((message, idx, subida) => (
           <span
