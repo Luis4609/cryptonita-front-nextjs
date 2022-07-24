@@ -13,9 +13,12 @@ const WebSocketDemo = () => {
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
 
+  const [highestPick, setHighestPick] = useState(lastMessage);
+
   useEffect(() => {
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
+
       // console.log(messageHistory)
     }
   }, [lastMessage, setMessageHistory]);
@@ -80,6 +83,7 @@ const WebSocketDemo = () => {
         }
       ></RealTimeCard>
 
+      <p>{highestPick?.data}</p>
       {/* <ul>
         {messageHistory.map((message, idx, subida) => (
           <span

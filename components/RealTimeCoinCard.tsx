@@ -33,7 +33,7 @@ interface IPriceCoin {
 }
 
 export default function RealTimeCard(props: IPriceCoin) {
-  console.log(`Props: ${props.actualStyle}`);
+  // console.log(`Props: ${props.actualStyle}`);
   return (
     <ThemeProvider theme={theme}>
       <Box
