@@ -1,11 +1,11 @@
 import { Typography, Grid, Box } from "@mui/material";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import NewsCard from "../../components/NewsCard";
 import { NewsType } from "../../types/news";
 import Layout from "../../components/Layout/Layout";
 import Sidebar from "../../components/Sidebar/sidebar";
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     "https://api.coinstats.app/public/v1/news/handpicked?skip=0&limit=20"
   );

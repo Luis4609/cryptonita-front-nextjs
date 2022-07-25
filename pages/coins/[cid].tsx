@@ -19,6 +19,8 @@ const CoinPage: NextPage = () => {
       .then((data) => setCoin(data.data));
   });
 
+  if (!coin) return <p>Loading...</p>;
+
   return (
     <Container>
       <Typography variant="h2" color="primary">

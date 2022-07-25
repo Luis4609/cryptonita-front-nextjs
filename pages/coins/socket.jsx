@@ -6,6 +6,9 @@ import Layout from "../../components/Layout/Layout";
 import Sidebar from "../../components/Sidebar/sidebar";
 
 const WebSocketDemo = () => {
+
+  console.count(`Rerenders:`)
+
   //Public API that will echo messages sent to it back to the client
   const [socketUrl, setSocketUrl] = useState(
     "wss://ws.coincap.io/prices?assets=bitcoin"
@@ -42,6 +45,7 @@ const WebSocketDemo = () => {
   function isCoinGoingUp(object1, object2) {
     // console.log(`%cCheck mayor que: ${object1 >= object2}`, "color: red ;");
     // console.log(`%cCheck valor que: ${object1}`, "color: green ;");
+  console.count(`IsGoingUp?:`)
 
     return object1 >= object2;
   }
@@ -52,7 +56,7 @@ const WebSocketDemo = () => {
     <div>
       <span>The WebSocket is currently {connectionStatus}</span>
       {/* {lastMessage ? <span> Last message: {lastMessage.data}</span> : null} */}
-      {lastMessage ? (
+      {/* {lastMessage ? (
         <span
           className={
             isCoinGoingUp(
@@ -66,7 +70,7 @@ const WebSocketDemo = () => {
           {" "}
           Bitcoin {messageHistory.at(-1)?.data.slice(12, -2)}
         </span>
-      ) : null}
+      ) : null} */}
       <RealTimeCard
         name="Bitcoin"
         price={messageHistory.at(-1)?.data.slice(12, -2)}

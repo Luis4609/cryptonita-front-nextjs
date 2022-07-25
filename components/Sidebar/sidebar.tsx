@@ -9,11 +9,11 @@ export default function Sidebar() {
       <Link href="/">
         <a>Home</a>
       </Link>
-      <Link href="/socket">
-        <a>Go to real time data</a>
-      </Link>
       <Link href="/coins">
         <a>Coins Page</a>
+      </Link>
+      <Link href="/coins/socket">
+        <a>Go to real time data</a>
       </Link>
       <Link href="/news">
         <a>News Page</a>
