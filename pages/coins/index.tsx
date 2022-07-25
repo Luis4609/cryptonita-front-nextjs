@@ -62,7 +62,6 @@ const CoinsPage: NextPage = ({ coinsinfo }) => {
 
 export default CoinsPage;
 
-
 CoinsPage.getLayout = function getLayout(page: NextPage) {
   return (
     <Layout>
