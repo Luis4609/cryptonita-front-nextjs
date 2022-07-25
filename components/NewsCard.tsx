@@ -13,7 +13,7 @@ import { NewsType } from "../types/news";
 
 function NewsCard(props: NewsType) {
   return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box sx={{ minWidth: 275, margin: 3 }}>
       <Card variant="outlined">
         <CardHeader
           avatar={<Avatar aria-label="recipe">{props.icon}</Avatar>}

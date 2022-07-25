@@ -10,8 +10,6 @@
     "cypress": "cypress open"
   },
   "dependencies": {
-    "@ant-design/charts": "^1.4.1",
-    "@ant-design/plots": "^1.1.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@hookform/resolvers": "^2.9.6",
@@ -22,11 +20,9 @@
     "echarts-for-react": "^3.0.2",
     "next": "12.2.0",
     "react": "18.2.0",
-    "react-chartjs-2": "^4.3.1",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.1",
     "react-use-websocket": "^4.2.0",
-    "recharts": "^2.1.12",
     "victory": "^36.5.3",
     "yup": "^0.32.11"
   },

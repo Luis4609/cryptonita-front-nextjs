@@ -4,6 +4,8 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import CoinCard from "../../components/CoinCard";
 import { Coin, CoinData } from "../../types/coin";
+import Layout from "../../components/Layout/Layout";
+import Sidebar from "../../components/Sidebar/sidebar";
 
 export const getStaticProps = async () => {
   const res = await fetch("https://api.coincap.io/v2/assets/");
@@ -59,3 +61,13 @@ const CoinsPage: NextPage = ({ coinsinfo }) => {
 };
 
 export default CoinsPage;
+
+
+CoinsPage.getLayout = function getLayout(page: NextPage) {
+  return (
+    <Layout>
+      <Sidebar />
+      {page}
+    </Layout>
+  );
+};

@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/socket.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/coins/socket.jsx"],
   "exclude": ["node_modules"]
 }

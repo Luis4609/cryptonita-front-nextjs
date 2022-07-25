@@ -1,10 +1,11 @@
-import Link from 'next/link'
-import styles from './sidebar.module.css'
+import Link from "next/link";
+import styles from "./sidebar.module.css";
+import { Input } from "@mui/material";
 
 export default function Sidebar() {
   return (
     <nav className={styles.nav}>
-      <input className={styles.input} placeholder="Search..." />
+      <Input placeholder="Search..." color="primary" />
       <Link href="/">
         <a>Home</a>
       </Link>
@@ -14,6 +15,9 @@ export default function Sidebar() {
       <Link href="/coins">
         <a>Coins Page</a>
       </Link>
+      <Link href="/news">
+        <a>News Page</a>
+      </Link>
     </nav>
-  )
+  );
 }

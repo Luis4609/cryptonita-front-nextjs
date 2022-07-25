@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { Typography, Grid, Box } from "@mui/material";
 import type { NextPage } from "next";
 import NewsCard from "../../components/NewsCard";
 import { NewsType } from "../../types/news";
+import Layout from "../../components/Layout/Layout";
+import Sidebar from "../../components/Sidebar/sidebar";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -16,23 +18,34 @@ export const getStaticProps = async () => {
 
 const NewsPage: NextPage = ({ newsinfo }) => {
   return (
-    <>
+    <Box sx={{ flexGrow: 1 }}>
       <Typography variant="h2">News Page</Typography>
-      {newsinfo.news.map((news: NewsType) => (
-        <NewsCard
-          id={news.id}
-          feedDate={news.feedDate}
-          source={news.source}
-          title={news.title}
-          icon={news.icon}
-          imgUrl={news.imgUrl}
-          description={news.description}
-          link={news.link}
-          coins={news.coins}
-        ></NewsCard>
-      ))}
-    </>
+      <Grid container spacing={2}>
+        {newsinfo.news.map((news: NewsType) => (
+          <NewsCard
+            id={news.id}
+            feedDate={news.feedDate}
+            source={news.source}
+            title={news.title}
+            icon={news.icon}
+            imgUrl={news.imgUrl}
+            description={news.description}
+            link={news.link}
+            coins={news.coins}
+          ></NewsCard>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
 export default NewsPage;
+
+NewsPage.getLayout = function getLayout(page: NextPage) {
+  return (
+    <Layout>
+      <Sidebar />
+      {page}
+    </Layout>
+  );
+};
