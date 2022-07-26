@@ -10,11 +10,12 @@ import {
   Avatar,
 } from "@mui/material";
 import { NewsType } from "../types/news";
+import Image from "next/image";
 
 function NewsCard(props: NewsType) {
   return (
     <Box sx={{ minWidth: 275, margin: 3 }}>
-      <Card variant="outlined">
+      <Card variant="outlined" key={props.id}>
         <CardHeader
           avatar={<Avatar aria-label="recipe">{props.icon}</Avatar>}
           title={props.title}
@@ -26,7 +27,7 @@ function NewsCard(props: NewsType) {
           </Typography>
           <Typography variant="h6">{props.source}</Typography>
           <Typography variant="h4">{props.title}</Typography>
-          <img src={props.imgUrl} alt="Image or this news" />
+          <Image src={props.imgUrl} alt="Image or this news" />
           <Typography>Market Cap: {props.description}</Typography>
           {props.coins.map((coin) => (
             <>

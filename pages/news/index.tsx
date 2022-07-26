@@ -32,6 +32,7 @@ const NewsPage: NextPage = ({ newsinfo }) => {
             description={news.description}
             link={news.link}
             coins={news.coins}
+            key={news.id}
           ></NewsCard>
         ))}
       </Grid>

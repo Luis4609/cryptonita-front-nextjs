@@ -7,7 +7,7 @@ import Sidebar from "../../components/Sidebar/sidebar";
 
 const WebSocketDemo = () => {
 
-  console.count(`Rerenders:`)
+  // console.count(`Rerenders:`)
 
   //Public API that will echo messages sent to it back to the client
   const [socketUrl, setSocketUrl] = useState(
@@ -45,7 +45,7 @@ const WebSocketDemo = () => {
   function isCoinGoingUp(object1, object2) {
     // console.log(`%cCheck mayor que: ${object1 >= object2}`, "color: red ;");
     // console.log(`%cCheck valor que: ${object1}`, "color: green ;");
-  console.count(`IsGoingUp?:`)
+  // console.count(`IsGoingUp?:`)
 
     return object1 >= object2;
   }
