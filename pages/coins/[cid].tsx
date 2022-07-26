@@ -13,10 +13,13 @@ const CoinPage: NextPage = () => {
 
   const [coin, setCoin] = useState<CoinData>();
 
+  console.log(cid);
+
   useEffect(() => {
-    fetch("https://api.coincap.io/v2/assets/" + cid)
+    fetch("http://localhost:8080/coins/" + cid)
       .then((res) => res.json())
-      .then((data) => setCoin(data.data));
+      .then((data) => setCoin(data.data))
+      .catch((message) => console.log(message));
   });
 
   if (!coin) return <p>Loading...</p>;

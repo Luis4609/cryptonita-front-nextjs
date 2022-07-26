@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 
+//Web-vitals
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   if (metric.label === "web-vital") {
     console.table(metric); // The metric object ({ id, name, startTime, value, label }) is logged to the console

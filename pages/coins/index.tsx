@@ -10,7 +10,9 @@ import Sidebar from "../../components/Sidebar/sidebar";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-const API_URL: string = "https://api.coincap.io/v2/assets/";
+// const API_URL: string = "https://api.coincap.io/v2/assets/";
+
+const API_URL: string = "http://localhost:8080/coins/all";
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(API_URL);
