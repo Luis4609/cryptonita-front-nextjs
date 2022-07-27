@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import type { NextPage } from "next";
+import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import Sidebar from "../components/Sidebar/sidebar";
 import styles from "../styles/Home.module.css";
-
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +12,12 @@ const Home: NextPage = () => {
         Welcome to <a href="">CryptoNita</a>
       </Typography>
 
+      <Link href="login">
+        <Typography>Login</Typography>
+      </Link>
+      <Link href="register">
+        <Typography>Register</Typography>
+      </Link>
     </main>
   );
 };
