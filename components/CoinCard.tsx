@@ -27,7 +27,7 @@ export default function CoinCard(props: CoinData) {
             <Typography variant="h5" component="div">
               Rank: {props.rank}
             </Typography>
-            <Typography variant="h6">{props.symbol}</Typography>
+            <Typography variant="h4">{props.symbol}</Typography>
             <Typography variant="h4">{props.name}</Typography>
             <Typography>Supply: {props.supply}</Typography>
             <Typography>Max supply: {props.maxSupply}</Typography>

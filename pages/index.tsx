@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Layout from "../components/Layout/Layout";
 import Sidebar from "../components/Sidebar/sidebar";
@@ -6,11 +7,12 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">CryptoNita</a>
-      </h1>
-    </>
+    <main className={styles.main}>
+      <Typography className={styles.title}>
+        Welcome to <a href="">CryptoNita</a>
+      </Typography>
+
+    </main>
   );
 };
 
