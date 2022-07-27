@@ -1,8 +1,14 @@
+import * as React from "react";
+
 import "../styles/globals.css";
 import type { AppProps, NextWebVitalsMetric } from "next/app";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 //Web-vitals
-export function reportWebVitals(metric: NextWebVitalsMetric) {
+export function reportWebVitals(metric: NextWebVitalsMetric): void {
   if (metric.label === "web-vital") {
     console.table(metric); // The metric object ({ id, name, startTime, value, label }) is logged to the console
   }
@@ -31,7 +37,24 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page: any) => page);
 
-  return getLayout(<Component {...pageProps} />);
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: prefersDarkMode ? "dark" : "light",
+        },
+      }),
+    [prefersDarkMode]
+  );
+
+  return getLayout(
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
