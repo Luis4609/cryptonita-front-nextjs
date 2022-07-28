@@ -1,6 +1,6 @@
 export type Coin = {
   data: CoinData;
-  timestamp: number;
+  timestamp?: number;
 };
 
 export type CoinData = {
@@ -8,12 +8,12 @@ export type CoinData = {
   rank: number;
   symbol: string;
   name: string;
-  supply: number;
-  maxSupply: number;
+  supply?: number;
+  maxSupply?: number;
   marketCapUsd: number;
   volumeUsd24Hr: number;
   priceUsd: number;
-  changePercent24Hr: number;
-  vwap24Hr: number;
+  changePercent24Hr?: number;
+  vwap24Hr?: number;
   explorer: string;
 };
