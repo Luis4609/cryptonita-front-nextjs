@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
-import Button from "@mui/material/Button";
+import { Typography, Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { Container } from "@mui/system";
 import { ReactElement } from "react";
+
 import Layout from "../components/Layout/Layout";
 import Sidebar from "../components/Sidebar/sidebar";
 

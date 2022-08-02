@@ -1,16 +1,15 @@
 import Link from "next/link";
-import type { GetStaticProps, NextPage } from "next";
 
-import { ThemeProvider, createTheme } from "@mui/system";
-import { dark } from "@mui/material/styles/createPalette";
+import { Box, Grid, Typography } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
-import { Box, CssBaseline, Grid, Paper, Typography } from "@mui/material";
+import { createTheme } from "@mui/system";
 import CoinCard from "../../components/CoinCard";
 import Layout from "../../components/Layout/Layout";
 import Sidebar from "../../components/Sidebar/sidebar";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 
+import type { GetStaticProps, NextPage } from "next";
 import { Coin, CoinData } from "../../types/coin";
 
 // const API_URL: string = "https://api.coincap.io/v2/assets/";

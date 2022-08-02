@@ -1,8 +1,6 @@
-import React from "react";
-import Link from "next/link";
 import type { NextPage } from "next";
+import Link from "next/link";
 import styles from "../../styles/Home.module.css";
-import Avatar from "../../components/ProfileAvatar";
 
 const AddNewsPage: NextPage = () => {
   // Handle the submit event on form submit.

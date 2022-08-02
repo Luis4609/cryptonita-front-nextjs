@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
 import { Typography } from "@mui/material";
+import type { NextPage } from "next";
+import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout/Layout";
 import Sidebar from "../components/Sidebar/sidebar";
 

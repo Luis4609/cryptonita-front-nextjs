@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-
 import { useState } from "react";
+
 
 type New = {
   id: number;

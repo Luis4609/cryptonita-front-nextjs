@@ -1,7 +1,8 @@
 import { Typography, Grid, Box } from "@mui/material";
 import type { GetStaticProps, NextPage } from "next";
-import NewsCard from "../../components/NewsCard";
 import { NewsType } from "../../types/news";
+
+import NewsCard from "../../components/NewsCard";
 import Layout from "../../components/Layout/Layout";
 import Sidebar from "../../components/Sidebar/sidebar";
 

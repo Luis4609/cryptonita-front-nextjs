@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 
-import RealTimeCard from "../../components/RealTimeCoinCard";
 import Layout from "../../components/Layout/Layout";
+import RealTimeCard from "../../components/RealTimeCoinCard";
 import Sidebar from "../../components/Sidebar/sidebar";
 
 const WebSocketDemo = () => {
