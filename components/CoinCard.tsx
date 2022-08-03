@@ -5,7 +5,7 @@ import {
   CardActions,
   CardContent,
   CardActionArea,
-  Typography,
+  Typography
 } from "@mui/material";
 import { CoinData } from "../types/coin";
 
